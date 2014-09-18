@@ -66,9 +66,7 @@
     init();
 
     function addEventListeners() {
-
       var movableElementPosition = movableElement.css("position");
-      alert("position:" + movableElementPosition);
       if (movableElementPosition === "absolute") {
         movableElement = movableElement.find(".valignInner");
         oldIEInnerPostion = {};
@@ -81,9 +79,11 @@
         $("body").on("mousemove", moveDrag);
       });
       //movableElement.on("mousemove", moveDrag);
-      movableElement.on("mouseup", function (e) {
-        endDrag(e);
-        $("body").off("mousemove", moveDrag);
+      $("body").on("mouseup", function (e) {
+        if (movableElement) {
+          endDrag(e);
+          $("body").off("mousemove", moveDrag);
+        }
       });
     }
 
