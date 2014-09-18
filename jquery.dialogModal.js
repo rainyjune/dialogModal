@@ -13,6 +13,9 @@
     var element = $(this);
 
     function init() {
+
+      element.addClass("dialogRootContainer");
+
       var container = $("<div>")
       container.addClass("dialog-container");
 

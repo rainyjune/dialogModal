@@ -3,7 +3,7 @@
   height: 100%;
   /*overflow: hidden;*/
 }
-#myDialog {
+.dialogRootContainer {
   position: absolute;
   /*
   width: expression(0+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');  

@@ -7,7 +7,7 @@ body > p {
   width: 2000px;
   height: 2000px;
 }
-#myDialog {
+.dialogRootContainer {
   position: fixed;
   left: 0;
   top: 0;
@@ -25,7 +25,7 @@ body > p {
   overflow: hidden;
 }
 
-#myDialog .dialog-container {
+.dialogRootContainer .dialog-container {
   border: 1px solid blue;
   
   display: table-cell;
