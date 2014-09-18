@@ -8,6 +8,14 @@
       contentWidth: 500
     };
 
+    var movableElement = null;
+    var startPoint = {
+      x: 0,
+      y: 0
+    };
+    var endPoint = { x: 0, y: 0 };
+
+
     mergedOptions = $.extend(defaultOptions, options);
 
     var element = $(this);
@@ -46,6 +54,8 @@
 
       element.append(container);
 
+      movableElement = valignContainer;
+
       lockDocument();
 
       addEventListeners();
@@ -54,7 +64,42 @@
     init();
 
     function addEventListeners() {
-      element.on("click", modalClicked);
+      //element.on("click", modalClicked);
+      movableElement.on("mousedown", function (e) {
+        startDrag(e);
+        $("body").on("mousemove", moveDrag);
+      });
+      //movableElement.on("mousemove", moveDrag);
+      movableElement.on("mouseup", function (e) {
+        endDrag(e);
+        $("body").off("mousemove", moveDrag);
+      });
+    }
+
+    function startDrag(e) {
+      startPoint.x = e.clientX;
+      startPoint.y = e.clientY;
+
+      console.log("start point:", startPoint);
+    }
+
+
+
+    function moveDrag(e) {
+      console.log("draging.", e.clientX, e.clientY);
+
+
+      movableElement.css("position", "relative");
+      movableElement.css({
+        left: e.clientX - startPoint.x, 
+        top: e.clientY - startPoint.y
+      });
+    }
+
+    function endDrag(e) {
+      endPoint.x = e.clientX;
+      endPoint.y = e.clientY;
+      console.log("Drag end!", endPoint);
     }
 
     function modalClicked() {
