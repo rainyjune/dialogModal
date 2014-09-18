@@ -15,6 +15,8 @@
     };
     var endPoint = { x: 0, y: 0 };
 
+    var oldIEInnerPostion = null;
+
 
     mergedOptions = $.extend(defaultOptions, options);
 
@@ -64,6 +66,15 @@
     init();
 
     function addEventListeners() {
+
+      var movableElementPosition = movableElement.css("position");
+      alert("position:" + movableElementPosition);
+      if (movableElementPosition === "absolute") {
+        movableElement = movableElement.find(".valignInner");
+        oldIEInnerPostion = {};
+        oldIEInnerPostion.left = parseInt(movableElement.css("left"));
+        oldIEInnerPostion.top = parseInt(movableElement.css("top"));
+      }
       //element.on("click", modalClicked);
       movableElement.on("mousedown", function (e) {
         startDrag(e);
@@ -80,26 +91,28 @@
       startPoint.x = e.clientX;
       startPoint.y = e.clientY;
 
-      console.log("start point:", startPoint);
+      //console.log("start point:", startPoint);
     }
 
 
 
     function moveDrag(e) {
-      console.log("draging.", e.clientX, e.clientY);
+      //console.log("draging.", e.clientX, e.clientY);
 
 
       movableElement.css("position", "relative");
+      var moveX = e.clientX - startPoint.x,
+          moveY = e.clientY - startPoint.y;
       movableElement.css({
-        left: e.clientX - startPoint.x, 
-        top: e.clientY - startPoint.y
+        left: oldIEInnerPostion ? oldIEInnerPostion.left + moveX : moveX , 
+        top: oldIEInnerPostion ? oldIEInnerPostion.top + moveY : moveY
       });
     }
 
     function endDrag(e) {
       endPoint.x = e.clientX;
       endPoint.y = e.clientY;
-      console.log("Drag end!", endPoint);
+      //console.log("Drag end!", endPoint);
     }
 
     function modalClicked() {
