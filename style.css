@@ -36,5 +36,18 @@ div.valignMiddle {
   margin-right: auto;
   border: 1px solid green;
   background-color: white;
+  position: relative;
   /*cursor: move;*/
+}
+
+.closeBtn {
+  width: 15px;
+  height: 15px;
+  background-color: blue;
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
 }

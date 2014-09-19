@@ -47,9 +47,14 @@
       footerContainer.addClass("footer");
       footerContainer.html(mergedOptions.footer);
 
+      var closeBtn = $("<div>");
+      closeBtn.addClass("closeBtn");
+      closeBtn.html("X");
+
       alignInnerContainer.append(headerContainer);
       alignInnerContainer.append(mainContainer);
       alignInnerContainer.append(footerContainer);
+      alignInnerContainer.append(closeBtn);
 
       valignContainer.append(alignInnerContainer);
       container.append(valignContainer);
@@ -80,6 +85,10 @@
             modalClicked();
           }
         }
+      });
+
+      $(".closeBtn").on("click", function () {
+        modalClicked();
       });
       ////element.on("click", modalClicked);
       //movableElement.on("mousedown", function (e) {
