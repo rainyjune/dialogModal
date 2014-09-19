@@ -10,11 +10,14 @@ div.valignMiddle {
   position: absolute;
   top: 50%;
   left: 50%;
+  border: none;
+  background-color: transparent;
 }
 
 div.valignInner {
   position: relative;
   top: -50%;
   left: -50%;
-  border: 1px solid red;
+  border: 1px solid green;
+  background-color: white;
 }

@@ -73,18 +73,18 @@
         oldIEInnerPostion.left = parseInt(movableElement.css("left"));
         oldIEInnerPostion.top = parseInt(movableElement.css("top"));
       }
-      //element.on("click", modalClicked);
-      movableElement.on("mousedown", function (e) {
-        startDrag(e);
-        $("body").on("mousemove", moveDrag);
-      });
-      //movableElement.on("mousemove", moveDrag);
-      $("body").on("mouseup", function (e) {
-        if (movableElement) {
-          endDrag(e);
-          $("body").off("mousemove", moveDrag);
-        }
-      });
+      ////element.on("click", modalClicked);
+      //movableElement.on("mousedown", function (e) {
+      //  startDrag(e);
+      //  $("body").on("mousemove", moveDrag);
+      //});
+      ////movableElement.on("mousemove", moveDrag);
+      //$("body").on("mouseup", function (e) {
+      //  if (movableElement) {
+      //    endDrag(e);
+      //    $("body").off("mousemove", moveDrag);
+      //  }
+      //});
     }
 
     function startDrag(e) {

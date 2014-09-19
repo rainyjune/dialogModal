@@ -26,8 +26,6 @@ body > p {
 }
 
 .dialogRootContainer .dialog-container {
-  border: 1px solid blue;
-  
   display: table-cell;
   vertical-align: middle;
 }
@@ -37,5 +35,6 @@ div.valignMiddle {
   margin-left: auto;
   margin-right: auto;
   border: 1px solid green;
-  cursor: move;
+  background-color: white;
+  /*cursor: move;*/
 }
