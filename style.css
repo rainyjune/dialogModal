@@ -13,14 +13,15 @@ body > p {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: gray;
   
-  filter: alpha(opacity=50); /* for IE */
-  -khtml-opacity: 0.5;      /* khtml, old safari */
-  -moz-opacity: 0.5;       /* old mozilla, netscape */
-  opacity: 0.5;           /* good browsers: FF, safari, opera */
-
-
+  /*
+  filter: alpha(opacity=50); 
+  -khtml-opacity: 0.5;      
+  -moz-opacity: 0.5;       
+  opacity: 0.5;           
+  */
+    
+  background: rgba(128, 128, 128, 0.5);
   display: table;
   overflow: hidden;
 }
@@ -50,4 +51,9 @@ div.valignMiddle {
   top: 0;
   text-align: center;
   cursor: pointer;
+}
+
+.dialog-container .header {
+  height: 20px;
+  background-color: blue;
 }

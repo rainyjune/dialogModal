@@ -1,0 +1,5 @@
+﻿.dialogRootContainer {
+  background: rgb(128, 128, 128);
+  filter: alpha(opacity=50); 
+  opacity: 0.5;  
+}
