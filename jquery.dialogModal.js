@@ -73,6 +73,14 @@
         oldIEInnerPostion.left = parseInt(movableElement.css("left"));
         oldIEInnerPostion.top = parseInt(movableElement.css("top"));
       }
+
+      $(document).keyup(function(e) {
+        if (e.keyCode == 27) {
+          if (movableElement) {
+            modalClicked();
+          }
+        }
+      });
       ////element.on("click", modalClicked);
       //movableElement.on("mousedown", function (e) {
       //  startDrag(e);
